@@ -1,25 +1,94 @@
-# README
+### Music Streaming Service Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains the backend code for a music streaming service built with Ruby on Rails, MySQL, and deployed on Railways. The application includes an artist table, where each artist is assigned a category. Each category has many albums, and each album has many songs.
 
-Things you may want to cover:
+# Getting Started
+Prerequisites
 
-* Ruby version
+Ruby 2.7.4
 
-* System dependencies
+Rails 6.1.4
 
-* Configuration
+MySQL 5.7
 
-* Database creation
+# Installation
+Clone the repository to your local machine.
 
-* Database initialization
+Install dependencies with bundle install
 
-* How to run the test suite
+Create the database with rails db:create
 
-* Services (job queues, cache servers, search engines, etc.)
+Migrate the database with rails db:migrate
 
-* Deployment instructions
+Start the server with rails s
 
-* ...
-# Baila-backend
+# Database Schema
+The database schema for this project consists of four tables:
+
+artists: Contains information about each artist, including their name, bio, and the category they belong to.
+
+categories: Contains information about each music category, including its name and a short description.
+
+albums: Contains information about each album, including its name, release date, and the category it belongs to.
+
+songs: Contains information about each song, including its name, length, and the album it belongs to.
+
+# Usage
+The API endpoints can be tested using a tool like Postman.
+
+# API Endpoints
+
+Artists
+
+GET /artists - Get a list of all artists
+
+GET /artists/:id - Get a specific artist by ID
+
+POST /artists - Create a new artist
+
+PUT /artists/:id - Update an artist by ID
+
+DELETE /artists/:id - Delete an artist by ID
+
+Categories
+
+GET /categories - Get a list of all categories
+
+GET /categories/:id - Get a specific category by ID
+
+POST /categories - Create a new category
+
+PUT /categories/:id - Update a category by ID
+
+DELETE /categories/:id - Delete a category by ID
+
+Albums
+
+GET /albums - Get a list of all albums
+
+GET /albums/:id - Get a specific album by ID
+
+POST /albums - Create a new album
+
+PUT /albums/:id - Update an album by ID
+
+DELETE /albums/:id - Delete an album by ID
+
+Songs
+
+GET /songs - Get a list of all songs
+
+GET /songs/:id - Get a specific song by ID
+
+POST /songs - Create a new song
+
+PUT /songs/:id - Update a song by ID
+
+DELETE /songs/:id - Delete a song by ID
+
+# Licence 
+
+Project licnced under Moringa School licence 
+
+# Author 
+Paul Omondi 
