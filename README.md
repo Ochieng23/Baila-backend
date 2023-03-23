@@ -1,8 +1,8 @@
-### Music Streaming Service Backend
+# Music Streaming Service Backend
 
 This repository contains the backend code for a music streaming service built with Ruby on Rails, MySQL, and deployed on Railways. The application includes an artist table, where each artist is assigned a category. Each category has many albums, and each album has many songs.
 
-# Getting Started
+## Getting Started
 Prerequisites
 
 Ruby 2.7.4
@@ -11,7 +11,7 @@ Rails 6.1.4
 
 MySQL 5.7
 
-# Installation
+## Installation
 Clone the repository to your local machine.
 
 Install dependencies with bundle install
@@ -22,7 +22,7 @@ Migrate the database with rails db:migrate
 
 Start the server with rails s
 
-# Database Schema
+## Database Schema
 The database schema for this project consists of four tables:
 
 artists: Contains information about each artist, including their name, bio, and the category they belong to.
@@ -33,10 +33,10 @@ albums: Contains information about each album, including its name, release date,
 
 songs: Contains information about each song, including its name, length, and the album it belongs to.
 
-# Usage
+## Usage
 The API endpoints can be tested using a tool like Postman.
 
-# API Endpoints
+## API Endpoints
 
 Artists
 
@@ -86,9 +86,9 @@ PUT /songs/:id - Update a song by ID
 
 DELETE /songs/:id - Delete a song by ID
 
-# Licence 
+## Licence 
 
 Project licnced under Moringa School licence 
 
-# Author 
+## Author 
 Paul Omondi 
