@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  length: 2023-03-28 01:39:28
+  album: one
+
+two:
+  name: MyString
+  length: 2023-03-28 01:39:28
+  album: two

@@ -23,6 +23,16 @@ module BailaBackend
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    require "active_storage/engine"
+
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options], credentials: false
+      end
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -34,6 +44,8 @@ module BailaBackend
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
     config.api_only = true
   end
 end
