@@ -38,7 +38,7 @@ Users have access to all the other table using macro associtations.
 ## Usage
 The API endpoints can be tested using a tool like Postman.
 
-## API Endpoints
+### API Endpoints
 
 Artists
 

@@ -78,7 +78,7 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.7.1)
+    debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
@@ -109,6 +109,7 @@ GEM
     mini_magick (4.12.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
+    multi_json (1.15.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -161,6 +162,8 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     sqlite3 (1.6.2-x86_64-linux)
+    streamio-ffmpeg (3.0.2)
+      multi_json (~> 1.8)
     thor (1.2.1)
     timeout (0.3.2)
     tzinfo (2.0.6)
@@ -184,6 +187,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)
   sqlite3 (~> 1.4)
+  streamio-ffmpeg
   tzinfo-data
 
 RUBY VERSION

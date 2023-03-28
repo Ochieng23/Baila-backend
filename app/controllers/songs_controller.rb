@@ -1,48 +1,51 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: %i[ show update destroy ]
+  before_action :set_song, only: [:show, :update, :destroy]
 
-  # GET /songs
   def index
-    @songs = Song.all
+    @songs = Song.with_attached_audio.all
 
-    render json: @songs
+    render json: @songs.map { |song|
+      {
+        id: song.id,
+        name: song.name,
+        length: song.length,
+        album_id: song.album_id,
+        image_url: song.image_url,
+        audio_url: song.audio.attached? ? url_for(song.audio) : nil
+      }
+    }
   end
 
-  # GET /songs/1
   def show
     render json: @song
   end
 
   def latest
-    # Find the latest song in the database
     latest_song = Song.last
-  
-    # Check if there is a latest song
-    if latest_song.nil?
-      # If there is no latest song, return an error with 404 status code
+
+    if latest_song
+      render json: song_attributes(latest_song)
+    else
       render json: { error: "No songs found" }, status: :not_found
-    else
-      # If there is a latest song, serialize its attributes and return them as JSON
-      song_json = SongSerializer.new(latest_song).serializable_hash
-      render json: song_json[:data][:attributes]
     end
   end
-  
 
-
-  # POST /songs
   def create
-    @song = Song.new(song_params)
-    
-    if @song.save
-      render json: @song, status: :created, location: @song
+    song = Song.new(song_params)
+
+    if song.save
+      song.audio.attach(params[:audio]) if params[:audio].present?
+
+      render json: {
+        song: song,
+        image_url: song.image.attached? ? url_for(song.image) : nil,
+        audio_url: song.audio.attached? ? url_for(song.audio) : nil
+      }, status: :created, location: song
     else
-      render json: @song.errors, status: :unprocessable_entity
+      render json: song.errors, status: :unprocessable_entity
     end
   end
-  
 
-  # PATCH/PUT /songs/1
   def update
     if @song.update(song_params)
       render json: @song
@@ -51,25 +54,28 @@ class SongsController < ApplicationController
     end
   end
 
-  # DELETE /songs/1
   def destroy
     @song.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_song
-      @song = Song.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    private
+  def set_song
+    @song = Song.find(params[:id])
+  end
 
-    def song_params
-      params.permit(:name, :length, :album_id, :image).tap do |whitelisted|
-        whitelisted[:image] = params[:image] if params[:image].present?
-      end
-    end 
-    
-    
+  def song_params
+    params.permit(:name, :length, :album_id, :image, :audio)
+  end
+
+  def song_attributes(song)
+    {
+      id: song.id,
+      name: song.name,
+      length: song.length,
+      album_id: song.album_id,
+      image_url: song.image_url,
+      audio_url: song.audio.attached? ? url_for(song.audio) : nil
+    }
+  end
 end
