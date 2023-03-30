@@ -40,6 +40,6 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
    end 
 
    def artist_params
-    params.permit(:name, :bio, :category_id, :email, :password)
+    params.require(:artist).permit(:name, :bio, :category_id, :email, :password)
   end
 end

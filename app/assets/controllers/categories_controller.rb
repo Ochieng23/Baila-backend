@@ -25,6 +25,6 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
         render json: {errors:"Category not found"}, status: :not_found
     end 
     def category_params
-        params.permit(:name, :description)
+        params.require(:category).permit(:name, :description)
       end
 end
