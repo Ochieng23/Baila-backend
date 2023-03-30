@@ -17,8 +17,16 @@ class SongsController < ApplicationController
   end
 
   def show
-    render json: @song
+    render json: {
+      id: @song.id,
+      name: @song.name,
+      length: @song.length,
+      album_id: @song.album_id,
+      image_url: @song.image_url,
+      audio_url: @song.audio.attached? ? url_for(@song.audio) : nil
+    }, status: :ok
   end
+  
 
   def latest
     latest_song = Song.last

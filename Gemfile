@@ -26,6 +26,9 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
   gem 'streamio-ffmpeg'
 
+  gem 'bcrypt'
+
+
   #serializer gem 
   gem "active_model_serializers", "~> 0.10.12"
 
