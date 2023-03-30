@@ -45,3 +45,8 @@ end
 
 
 gem "jsonapi-serializer", "~> 2.2"
+
+group :production do
+  gem 'pg', '~> 1.4', '>= 1.4.6' # postgres adapter
+  
+end
