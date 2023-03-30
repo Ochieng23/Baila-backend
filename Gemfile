@@ -28,7 +28,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
   gem 'bcrypt'
 
-
+  gem "rake", "~> 13.0"
   #serializer gem 
   gem "active_model_serializers", "~> 0.10.12"
 

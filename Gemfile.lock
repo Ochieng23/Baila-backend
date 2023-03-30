@@ -190,6 +190,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)
+  rake (~> 13.0)
   sqlite3 (~> 1.4)
   streamio-ffmpeg
   tzinfo-data
