@@ -11,6 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_03_29_185426) do
+
+
+  enable_extension "plpgsql"
+  enable_extension "timescaledb"
+
+  
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
