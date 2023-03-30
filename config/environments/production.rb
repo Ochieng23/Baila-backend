@@ -65,4 +65,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_controller.asset_host = 'your-cdn-url.com'
+
+
+  config.active_record.schema_format = :sql
+
+config.after_initialize do
+  ActiveRecord::Base.connection.execute('CREATE EXTENSION IF NOT EXISTS plpgsql')
+  ActiveRecord::Base.connection.execute('CREATE EXTENSION IF NOT EXISTS timescaledb')
+end
+
+
 end
