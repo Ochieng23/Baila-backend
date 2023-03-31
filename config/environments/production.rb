@@ -71,10 +71,13 @@ Rails.application.configure do
 
   config.active_record.schema_format = :sql
 
-config.after_initialize do
-  ActiveRecord::Base.connection.execute('CREATE EXTENSION IF NOT EXISTS plpgsql')
-  ActiveRecord::Base.connection.execute('CREATE EXTENSION IF NOT EXISTS timescaledb')
-end
+# config/application.rb or config/environments/production.rb
+config.assets.enabled = true
+config.assets.compile = true
+config.assets.digest = true
+config.assets.js_compressor = :uglifier
+config.assets.css_compressor = :sass
+
 
 
 end

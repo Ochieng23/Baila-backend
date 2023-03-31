@@ -30,7 +30,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
   gem "rake", "~> 13.0"
 
-  gem 'sprockets-rails'
+  # gem 'sprockets-rails'
   gem 'require_all'
   #serializer gem 
   gem "active_model_serializers", "~> 0.10.12"
