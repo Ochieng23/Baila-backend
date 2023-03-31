@@ -1,4 +1,5 @@
 require_relative "boot"
+# require 'sprockets/railtie'
 
 require "rails"
 # Pick the frameworks you want:
@@ -50,7 +51,7 @@ module BailaBackend
 
    
 
-   
+
 
 
     

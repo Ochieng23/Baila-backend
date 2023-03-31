@@ -66,17 +66,17 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_controller.asset_host = 'your-cdn-url.com'
+  # config.action_controller.asset_host = 'your-cdn-url.com'
 
 
   config.active_record.schema_format = :sql
 
-# config/application.rb or config/environments/production.rb
-config.assets.enabled = true
-config.assets.compile = true
-config.assets.digest = true
-config.assets.js_compressor = :uglifier
-config.assets.css_compressor = :sass
+# # config/application.rb or config/environments/production.rb
+# config.assets.enabled = true
+# config.assets.compile = true
+# config.assets.digest = true
+# config.assets.js_compressor = :uglifier
+# config.assets.css_compressor = :sass
 
 
 
