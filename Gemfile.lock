@@ -164,6 +164,7 @@ GEM
     require_all (3.0.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
+    sqlite3 (1.6.2-x86_64-linux)
     streamio-ffmpeg (3.0.2)
       multi_json (~> 1.8)
     thor (1.2.1)
@@ -192,6 +193,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   rake (~> 13.0)
   require_all
+  sqlite3 (~> 1.4)
   streamio-ffmpeg
   tzinfo-data
 
@@ -199,4 +201,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.4.7
+   2.4.10
