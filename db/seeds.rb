@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-category_id corresponds to a foreign key that references a separate categories table
+
 Album.create(name: "Thriller", release_date: "1982-11-30", category_id: 1)
 Album.create(name: "The Dark Side of the Moon", release_date: "1973-03-01", category_id: 2)
 Album.create(name: "Rumours", release_date: "1977-02-04", category_id: 3)
