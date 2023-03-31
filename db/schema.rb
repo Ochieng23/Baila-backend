@@ -12,8 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_03_31_005649) do
 
-  enable_extension "plpgsql"
-  enable_extension "timescaledb"
+ 
   
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
