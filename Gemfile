@@ -55,8 +55,9 @@ group :production do
   gem 'pg', '~> 1.4', '>= 1.4.6' # postgres adapter
   gem "puma", "~> 5.0"
 
+  gem "azure-storage-blob", require: false
 
-  gem 'azure-storage-blob'
+  
 
   
 end
