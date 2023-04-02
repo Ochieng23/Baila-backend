@@ -24,6 +24,9 @@ module BailaBackend
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.session_store :cookie_store, expire_after: 30.minutes
+
+
     require "active_storage/engine"
 
 

@@ -1,6 +1,24 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :update, :destroy]
 
+
+
+  # def home_songs
+  #   @songs = Song.with_attached_audio.order(created_at: :desc).limit(8)
+  
+  #   render json: @songs.map { |song|
+  #     {
+  #       id: song.id,
+  #       name: song.name,
+  #       length: song.length,
+  #       album_id: song.album_id,
+  #       image_url: song.image_url,
+  #       audio_url: song.audio.attached? ? url_for(song.audio) : nil
+  #     }
+  #   }
+  # end
+  
+
   def index
     @songs = Song.with_attached_audio.all
 
