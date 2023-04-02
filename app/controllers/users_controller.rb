@@ -16,20 +16,7 @@ class UsersController < ApplicationController
   end
   
 
-  def current_user
-    session_id = cookies.signed[:session_id]
-    puts "Session ID: #{session_id}"
-    return unless session_id.present?
-  
-    @current_user = User.find_by_session_id(session_id)
-    puts "Current User: #{@current_user}"
-    
-    if @current_user
-      render json: @current_user.as_json(except: [:password_digest, :session_id]), status: :ok
-    else
-      head :no_content
-    end
-  end
+ 
   
   
   

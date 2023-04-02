@@ -33,7 +33,7 @@ module BailaBackend
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options], credentials: false
+        resource '*', headers: :any, methods: [:get, :post, :options,:patch, :delete], credentials: false
       end
     end
 

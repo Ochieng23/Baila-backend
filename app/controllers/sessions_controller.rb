@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
   
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+      session[:user_id] ||= user.id
       session[:session_id] = request.session_options[:id]
       render json: { success: true, message: "Logged in successfully." }
     else
@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    byebug
     cookies.delete(:user_id)
     head :no_content
   end

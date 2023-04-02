@@ -40,7 +40,7 @@ class UploadsController < ApplicationController
 
   # GET /home
   def home
-    @uploads = Upload.order(created_at: :desc).limit(8)
+    @uploads = Upload.order(created_at: :asc).limit(8)
     render json: @uploads
   end
 
