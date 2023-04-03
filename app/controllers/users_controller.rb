@@ -5,22 +5,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-  
-    if @user.save
-      cookies.signed[:user_id] = @user.id
-      render json: { message: "User was successfully created." }
-    else
-      render json: { error: @user.errors.full_messages }, status: :unprocessable_entity
-    end
-  end
-  
+  @user = User.new(user_params)
 
- 
-  
-  
-  
-  
+  if @user.save
+    session[:user_id] = @user.id
+    render json: { message: "User was successfully created." }
+  else
+    render json: { error: @user.errors.full_messages }, status: :unprocessable_entity
+  end
+end
   
   
   def show
