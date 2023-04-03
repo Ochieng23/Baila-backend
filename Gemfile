@@ -26,7 +26,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
   gem 'streamio-ffmpeg'
 
-  gem 'bcrypt'
+  gem 'bcrypt' 
 
   gem "rake", "~> 13.0"
  
