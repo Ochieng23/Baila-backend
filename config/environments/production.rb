@@ -8,13 +8,13 @@ Rails.application.configure do
   #   config.active_storage.azure_storage_access_key = ENV['eTA63RT7OL25xfNqbwvrnqDvMhxS4XbDyBnPixLKMKD84PL1ofQWXJktSZCn3Ri7nsSTKfEGDKro+ASt9PfQ9A==']
   #   config.active_storage.azure_storage_container = ENV['baila']
   # else
-      # config.active_storage.service = :local
+       config.active_storage.service = :local
   #   config.active_storage.root = "#{Rails.root}/storage"
   # end
   
 
   # Settings specified here will take precedence over those in config/application.rb.
-    config.active_storage.service = :azure
+    # config.active_storage.service = :azure
 
   # Code is not reloaded between requests.
   config.cache_classes = true
