@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :listeners
   resources :uploads
   resources :songs
   resources :artists
@@ -6,11 +7,11 @@ Rails.application.routes.draw do
   resources :albums
   resources :users
   get '/latest', to: 'songs#latest'
-  post '/signup', to: 'users#create'
-  get '/me', to: 'users#show'
+  post '/signup', to: 'listeners#create'
+  get '/me', to: 'listeners#show'
   post '/login', to: 'sessions#create'
   delete '/logout', to:'sessions#destroy'
-  get '/current', to: 'users#current_user'
+  get '/current', to: 'listeners#current_user'
   get '/home', to: 'uploads#home'
   get '/sessions', to: 'sessions#index'
  

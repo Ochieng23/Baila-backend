@@ -155,10 +155,10 @@
 # assuming you have an array of user objects in a file called 'users.rb'
 
 users = [
-  { name: 'Otada', email: 'kinda.com', password: 'wabebe' },
-  { name: 'Jane Doe', email: 'admin@nicetouch.com', password: 'wazito' }
+  { username: 'Otada', email: 'kinda.com', password: 'wabebe' },
+  { username: 'Jane Doe', email: 'admin@nicetouch.com', password: 'wazito' }
 ]
 
 users.each do |user|
-  User.create(user)
+  Listener.create(user)
 end
