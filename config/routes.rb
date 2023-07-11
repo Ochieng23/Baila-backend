@@ -9,11 +9,10 @@ Rails.application.routes.draw do
   get '/latest', to: 'songs#latest'
   post '/signup', to: 'listeners#create'
   get '/me', to: 'listeners#show'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to:'sessions#destroy'
+  post '/login', to: 'auth#login'
   get '/current', to: 'listeners#current_user'
   get '/home', to: 'uploads#home'
-  get '/sessions', to: 'sessions#index'
+ 
  
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
